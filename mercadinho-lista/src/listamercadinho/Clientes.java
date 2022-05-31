@@ -10,7 +10,7 @@ public class Clientes {
 	private int id;
 
 	public Clientes() {
-		
+
 	}
 
 	public String getNome() {
@@ -20,13 +20,13 @@ public class Clientes {
 	public Integer getId() {
 		return id;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		Clientes outro = (Clientes) obj;
 		return this.nome.equals(outro.nome);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return this.nome.hashCode();
@@ -36,18 +36,15 @@ public class Clientes {
 	public String toString() {
 		return "[O cliente: " + this.nome + ", Identificação: " + this.id + "]";
 	}
-	
-public void CreateCliente (int id, String nome) throws ClassNotFoundException {
-		
+
+	public void CreateCliente(int id, String nome) throws ClassNotFoundException {
+
 		try {
 			Connection con = Conecta.criarConexao();
 			String sql = "INSERT INTO \"Clientes\" (id, nome) VALUES (?, ?);";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			ps.setString(2, nome);
-			
-			
-			
 
 			ps.executeUpdate();
 
@@ -57,30 +54,27 @@ public void CreateCliente (int id, String nome) throws ClassNotFoundException {
 
 		} finally {
 
-			
 		}
 	}
 
-public void ApagaCliente (int id) throws Exception {
-	
-	try {
-		Connection con = Conecta.criarConexao();
-		String sql = "DELETE FROM \"Clientes\" WHERE (id) = ?";
-		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, id);
-		
+	public void ApagaCliente(int id) throws Exception {
 
-		ps.executeUpdate();
+		try {
+			Connection con = Conecta.criarConexao();
+			String sql = "DELETE FROM \"Clientes\" WHERE (id) = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
 
-	} catch (SQLException e) {
+			ps.executeUpdate();
 
-		e.printStackTrace();
+		} catch (SQLException e) {
 
-	} finally {
+			e.printStackTrace();
 
-		
+		} finally {
+
+		}
 	}
-}
 
 public void AtualizaCliente (int id, String nome) throws Exception {
 	
@@ -103,17 +97,15 @@ public void AtualizaCliente (int id, String nome) throws Exception {
 
 		
 	}
-	
-	public ResultSet ListaClientes(int id) throws SQLException, ClassNotFoundException{
-	    Connection con = Conecta.criarConexao();
 
-	    String query = "SELECT * FROM \"Clientes\"";
+	public ResultSet ListaClientes(int id) throws SQLException, ClassNotFoundException {
+		Connection con = Conecta.criarConexao();
 
-	    PreparedStatement pst = con.prepareStatement(query);
-	    ResultSet rs = pst.executeQuery();
+		String query = "SELECT * FROM \"Clientes\"";
 
-	    
-	    
-	    return rs;
-}
+		PreparedStatement pst = con.prepareStatement(query);
+		ResultSet rs = pst.executeQuery();
+
+		return rs;
+	}
 }
