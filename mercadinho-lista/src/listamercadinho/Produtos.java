@@ -67,7 +67,7 @@ public class Produtos {
 
 		} finally {
 
-			//Conecta.closeConnection();
+			
 		}
 		
 }
@@ -89,7 +89,7 @@ public class Produtos {
 
 			} finally {
 
-				//Conecta.closeConnection();
+				
 			}
 		}
 		
@@ -114,7 +114,7 @@ public class Produtos {
 
 			} finally {
 
-				//Conecta.closeConnection();
+				
 			}
 			
 			

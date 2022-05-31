@@ -57,7 +57,7 @@ public void CreateCliente (int id, String nome) throws ClassNotFoundException {
 
 		} finally {
 
-			//Conecta.closeConnection();
+			
 		}
 	}
 
@@ -78,7 +78,7 @@ public void ApagaCliente (int id) throws Exception {
 
 	} finally {
 
-		//Conecta.closeConnection();
+		
 	}
 }
 
@@ -101,7 +101,7 @@ public void AtualizaCliente (int id, String nome) throws Exception {
 
 	} finally {
 
-		//Conecta.closeConnection();
+		
 	}
 	
 	public ResultSet ListaClientes(int id) throws SQLException, ClassNotFoundException{
