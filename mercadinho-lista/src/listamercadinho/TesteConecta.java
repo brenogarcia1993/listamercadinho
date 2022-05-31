@@ -216,4 +216,12 @@ public class TesteConecta {
 
 	}
 
+	public static ResultSet ListaClientes(int id) throws ClassNotFoundException, SQLException {
+
+		Clientes clientes = new Clientes();
+		clientes.ListaClientes(id);
+
+		return clientes.ListaClientes(id);
+
+	}
 }
