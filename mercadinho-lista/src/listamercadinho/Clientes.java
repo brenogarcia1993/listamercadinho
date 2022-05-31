@@ -103,5 +103,17 @@ public void AtualizaCliente (int id, String nome) throws Exception {
 
 		//Conecta.closeConnection();
 	}
+	
+	public ResultSet ListaClientes(int id) throws SQLException, ClassNotFoundException{
+	    Connection con = Conecta.criarConexao();
+
+	    String query = "SELECT * FROM \"Clientes\"";
+
+	    PreparedStatement pst = con.prepareStatement(query);
+	    ResultSet rs = pst.executeQuery();
+
+	    
+	    
+	    return rs;
 }
 }

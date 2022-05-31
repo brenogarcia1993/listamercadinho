@@ -14,22 +14,22 @@ import java.util.Set;
 public class Mercadinho {
 
 	private String nome;
-	private String instrutor;
+	private String registro;
 	private List<Produtos> produtos = new LinkedList<Produtos>();
 	
 	
 
 	public Mercadinho(String nome, String instrutor) {
 		this.nome = nome;
-		this.instrutor = instrutor;
+		this.registro = registro;
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
-	public String getInstrutor() {
-		return instrutor;
+	public String getRegistro() {
+		return registro;
 	}
 
 	public List<Produtos> getProdutos() {
